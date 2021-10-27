@@ -87,11 +87,7 @@ if inp == "10":
 	print("The divisions in the AFC are the " + afcDivisionsNames[0] + ", " + afcDivisionsNames[1] + ", " + afcDivisionsNames[2] + ", and the " + afcDivisionsNames[3] + ".")
 
 if inp == "11":
-	for each in nflTeamVars:
-		print(each)
-else:
-	#print("Please type in a number from 1 to 11. ")
-	inp = input("Type in your desired option from above: " )
+	print(nflTeamVars)
 
 	
 
