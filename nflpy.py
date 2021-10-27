@@ -3,6 +3,7 @@
 #
 #  print.py
 #  
+#  Copyright 2021 Kelley Parker 
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -43,10 +44,9 @@ nfcDivisionsTeamVars = [nfcEast,nfcWest,nfcNorth,nfcSouth]
 afcDivisionsTeamVars = [afcEast,afcWest,afcNorth,afcSouth]
 
 nflDivisions = ["NFC Conference","AFC Conference"]
-nflTeamVars = [afcDivisionsTeamVars, nfcDivisionsTeamVars]
+nflTeamVars = [afcDivisionsTeamVars,nfcDivisionsTeamVars]
 
 print("Type in the division whose teams you would like to see listed.\n")
-
 print("1) NFC East")
 print("2) NFC West")
 print("3) NFC North")
@@ -55,38 +55,46 @@ print("5) AFC East")
 print("6) AFC West")
 print("7) AFC North")
 print("8) AFC South\n")
-
 print("9) List all NFC divisions")
 print("10) List all AFC divisions")
-
 print("11) List all NFL teams")
+inp = input("Type in your desired option from above: ")
 
-inp = input("Type in your desired option from above: " )
 
-if inp == "1":
-	print("The teams in the NFC East are the " + nfcEast[0] + ", " + nfcEast[1] + ", " + nfcEast[2] + ", and the " + nfcEast[3] + ".")
-if inp == "2":
-	print("The teams in the NFC West are the " + nfcWest[0] + ", " + nfcWest[1] + ", " + nfcWest[2] + ", and the " + nfcWest[3] + ".")
-if inp == "3":
-	print("The teams in the NFC North are the " + nfcNorth[0] + ", " + nfcNorth[1] + ", " + nfcNorth[2] + ", and the " + nfcNorth[3] + ".")
-if inp == "4":
-	print("The teams in the NFC South are the " + nfcSouth[0] + ", " + nfcSouth[1] + ", " + nfcSouth[2] + ", and the " + nfcSouth[3] + ".")
-if inp == "5":
-	print("The teams in the NFC East are the " + afcEast[0] + ", " + afcEast[1] + ", " + afcEast[2] + ", and the " + afcEast[3] + ".")
-if inp == "6":
-	print("The teams in the NFC West are the " + afcWest[0] + ", " + afcWest[1] + ", " + afcWest[2] + ", and the " + afcWest[3] + ".")
-if inp == "7":
-	print("The teams in the NFC North are the " + afcNorth[0] + ", " + afcNorth[1] + ", " + afcNorth[2] + ", and the " + afcNorth[3] + ".")
-if inp == "8":
-	print("The teams in the NFC South are the " + afcSouth[0] + ", " + afcSouth[1] + ", " + afcSouth[2] + ", and the " + afcSouth[3] + ".")
 
-if inp == "9":
-	print("The divisions in the NFC are the " + nfcDivisionsNames[0] + ", " + nfcDivisionsNames[1] + ", " + nfcDivisionsNames[2] + ", and the " + nfcDivisionsNames[3] + ".")
-if inp == "10":
-	print("The divisions in the AFC are the " + afcDivisionsNames[0] + ", " + afcDivisionsNames[1] + ", " + afcDivisionsNames[2] + ", and the " + afcDivisionsNames[3] + ".")
+def readResponse():
+	if inp == "1":
+		print("The teams in the NFC East are the " + nfcEast[0] + ", " + nfcEast[1] + ", " + nfcEast[2] + ", and the " + nfcEast[3] + ".")
+	if inp == "2":
+		print("The teams in the NFC West are the " + nfcWest[0] + ", " + nfcWest[1] + ", " + nfcWest[2] + ", and the " + nfcWest[3] + ".")
+	if inp == "3":
+		print("The teams in the NFC North are the " + nfcNorth[0] + ", " + nfcNorth[1] + ", " + nfcNorth[2] + ", and the " + nfcNorth[3] + ".")
+	if inp == "4":
+		print("The teams in the NFC South are the " + nfcSouth[0] + ", " + nfcSouth[1] + ", " + nfcSouth[2] + ", and the " + nfcSouth[3] + ".")
+	if inp == "5":
+		print("The teams in the NFC East are the " + afcEast[0] + ", " + afcEast[1] + ", " + afcEast[2] + ", and the " + afcEast[3] + ".")
+	if inp == "6":
+		print("The teams in the NFC West are the " + afcWest[0] + ", " + afcWest[1] + ", " + afcWest[2] + ", and the " + afcWest[3] + ".")
+	if inp == "7":
+		print("The teams in the NFC North are the " + afcNorth[0] + ", " + afcNorth[1] + ", " + afcNorth[2] + ", and the " + afcNorth[3] + ".")
+	if inp == "8":
+		print("The teams in the NFC South are the " + afcSouth[0] + ", " + afcSouth[1] + ", " + afcSouth[2] + ", and the " + afcSouth[3] + ".")
+	if inp == "9":
+		print("The divisions in the NFC are the " + nfcDivisionsNames[0] + ", " + nfcDivisionsNames[1] + ", " + nfcDivisionsNames[2] + ", and the " + nfcDivisionsNames[3] + ".")
+	if inp == "10":
+		print("The divisions in the AFC are the " + afcDivisionsNames[0] + ", " + afcDivisionsNames[1] + ", " + afcDivisionsNames[2] + ", and the " + afcDivisionsNames[3] + ".")
+	if inp == "11":
+		print(nflTeamVars)
+	if inp == ("Exit") or ("ex") or ("EX") or ("Ex") or ("EXIT") or ("exit") or ("xit") or ("XIT"):
+		print("Thanks for using this program!")
+		exit
+	
 
-if inp == "11":
-	print(nflTeamVars)
+
+readResponse()
+		
+		
+	
 
 	
 
