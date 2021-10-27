@@ -46,25 +46,30 @@ afcDivisionsTeamVars = [afcEast,afcWest,afcNorth,afcSouth]
 nflDivisions = ["NFC Conference","AFC Conference"]
 nflTeamVars = [afcDivisionsTeamVars,nfcDivisionsTeamVars]
 
-print("Type in the division whose teams you would like to see listed.\n")
-print("1) NFC East")
-print("2) NFC West")
-print("3) NFC North")
-print("4) NFC South\n")
-print("5) AFC East")
-print("6) AFC West")
-print("7) AFC North")
-print("8) AFC South\n")
-print("9) List all NFC divisions")
-print("10) List all AFC divisions")
-print("11) List all NFL teams")
-inp = input("Type in your desired option from above: ")
 
+
+def printMenu():
+	print("Type in the division whose teams you would like to see listed.\n")
+	print("1) NFC East")
+	print("2) NFC West")
+	print("3) NFC North")
+	print("4) NFC South\n")
+	print("5) AFC East")
+	print("6) AFC West")
+	print("7) AFC North")
+	print("8) AFC South\n")
+	print("9) List all NFC divisions")
+	print("10) List all AFC divisions")
+	print("11) List all NFL teams")
+	global inp
+	inp = 0
+	inp = input("Type in your desired option from above: ")
 
 
 def readResponse():
 	if inp == "1":
 		print("The teams in the NFC East are the " + nfcEast[0] + ", " + nfcEast[1] + ", " + nfcEast[2] + ", and the " + nfcEast[3] + ".")
+		printMenu()
 	if inp == "2":
 		print("The teams in the NFC West are the " + nfcWest[0] + ", " + nfcWest[1] + ", " + nfcWest[2] + ", and the " + nfcWest[3] + ".")
 	if inp == "3":
@@ -85,18 +90,16 @@ def readResponse():
 		print("The divisions in the AFC are the " + afcDivisionsNames[0] + ", " + afcDivisionsNames[1] + ", " + afcDivisionsNames[2] + ", and the " + afcDivisionsNames[3] + ".")
 	if inp == "11":
 		print(nflTeamVars)
-	if inp == ("Exit") or ("ex") or ("EX") or ("Ex") or ("EXIT") or ("exit") or ("xit") or ("XIT"):
-		print("Thanks for using this program!")
-		exit
-	
+	# if inp == ("Exit") or ("ex") or ("EX") or ("Ex") or ("EXIT") or ("exit") or ("xit") or ("XIT"):
+		# print("Thanks for using this program!")
+		# exit
+	else:
+		print("That is not a valid response, please resubmit your response.")
+		printMenu()
+		
 
-
+printMenu()
 readResponse()
-		
-		
-	
-
-	
 
 def main(args):
     return 0
