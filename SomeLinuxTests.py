@@ -1,11 +1,11 @@
 #!/usr/bin/python
-
+#!C:\Users\cliffgoat\AppData\Local\Programs\Python\Python310\python.exe
 
 import os
 import platform
 
-#cwd = os.getcwd()
-#print("Here's the current workding directory:",cwd)
+cwd = os.getcwd()
+print("Here's the current workding directory:",cwd)
 
 #print("I will create a test folder here:")
 #os.mkdir("testFolder/")
