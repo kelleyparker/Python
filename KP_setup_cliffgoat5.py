@@ -39,5 +39,6 @@ os.makedirs('O:/Downloads', exist_ok=True)
 ### Create FTP folder on C: for FTP server
 os.makedirs('C:/ftp', exist_ok=True)
 
-### Remove C:\VirtualMachines
+### Remove C:\VirtualMachines - Uncomment the line below here and add the necessary line(s) to remove directories using shutil.rmtree
 #shutil.rmtree('C:/VirtualMachines')
+
