@@ -7,36 +7,26 @@ import shutil
 
 
 nflPath = 'C:/NFL Teams/'
-nflGeos = [ 'South', 'North', 'East', 'West' ]
-nfcEast = [ 'Cowboys', 'Commanders', 'Eagles', 'Giants']
+nfcDivsNames = [ 'NFC South', 'NFC North', 'NFC East', 'NFC West' ]
+afcDivsNames = [ 'AFC South', 'AFC North', 'AFC East', 'AFC West' ]
 
+nfcEast = [ 'Cowboys', 'Commanders', 'Eagles', 'Giants']
+nfcSouth = [ 'Buccaneers', 'Saints', 'Panthers', 'Falcons']
+nfcWest = [ 'Cardinals', 'Rams', 'Seahawks', '49ers']
+nfcNorth = [ 'Packers', 'Bears', 'Vikings', 'Lions']
+nfcDivTeams = [ nfcEast, nfcSouth, nfcWest, nfcNorth ]
 
 shutil.rmtree('C:/NFL Teams/', ignore_errors=True)
-os.mkdir('C:/NFL Teams/')
-
+os.mkdir(nflPath)
 
 def main():
     createFolders()
-    createNFCEastTextFiles()
-
 
 def createFolders():
-    for i in nflGeos:
+    for i in afcDivsNames:
         os.makedirs('C:/NFL Teams/AFC/%s' % i)
-    for i in nflGeos:
+    for i in nfcDivsNames:
         os.makedirs('C:/NFL Teams/NFC/%s' % i)
-
-def createNFCEastTextFiles():
-
-    for i in nfcEast:
-        os.chdir('C:/NFL Teams/NFC/East')
-        open('%s.txt' % i, 'w')
-    for file in os.listdir('C:/NFL Teams/NFC/East'), teams in nfcEast:
-        #print(file)
-        f = open(file, 'w')
-        f.write('This team is the %s' % teams )
-
-
 
 
 
