@@ -16,14 +16,10 @@ canvaExe = 'https://desktop-release.canva.com/Canva%20Setup%201.59.0.exe'
 epicMsi = 'https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download' \
           '/EpicGamesLauncherInstaller.msi'
 
-
-
 arrayOfInstallers = [url7exe, steamExe, nppExe, canvaExe, epicMsi]
 x = 0
 
 for i in arrayOfInstallers:
     theName = (i.rsplit('/', 1)[1])
-    print(theName)
     r = requests.get(i, allow_redirects=True)
     open(f"D:/installers/{theName}", 'wb').write(r.content)
-    x = x + 1
