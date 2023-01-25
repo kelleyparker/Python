@@ -4,7 +4,6 @@ import urllib.request
 
 import requests
 import os
-import platform
 
 installDir = 'D:/installers'
 os.makedirs(installDir, exist_ok=True)
