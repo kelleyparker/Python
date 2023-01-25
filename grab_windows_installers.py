@@ -1,5 +1,7 @@
 # URL for 7ZIP Windows x64 installer exe: https://www.7-zip.org/a/7z2201-x64.exe
 # URL for Steam Windows installer exe: https://cdn.akamai.steamstatic.com/client/installer/SteamSetup.exe
+import urllib.request
+
 import requests
 import os
 import platform
@@ -15,10 +17,14 @@ canvaExe = 'https://desktop-release.canva.com/Canva%20Setup%201.59.0.exe'
 epicMsi = 'https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download' \
           '/EpicGamesLauncherInstaller.msi'
 
+
+
 arrayOfInstallers = [url7exe, steamExe, nppExe, canvaExe, epicMsi]
 x = 0
 
 for i in arrayOfInstallers:
+    theName = (i.rsplit('/', 1)[1])
+    print(theName)
     r = requests.get(i, allow_redirects=True)
-    open(f"D:/installers/installer{x}.exe", 'wb').write(r.content)
-    x = x+1
+    open(f"D:/installers/{theName}", 'wb').write(r.content)
+    x = x + 1
