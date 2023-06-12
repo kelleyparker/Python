@@ -1,44 +1,51 @@
-#!"C:\Users\cliffgoat\AppData\Local\Programs\Python\Python310\python.exe"
-
 import os
-import platform
-import shutil
 
-### Create C:\VirtualMachines
-os.makedirs('C:/VirtualMachines/WindowsServers/WindowsServer2019', exist_ok=True)
-os.makedirs('C:/VirtualMachines/WindowsServers/WindowsServer2016', exist_ok=True)
-os.makedirs('C:/VirtualMachines/WindowsServers/WindowsServer2012', exist_ok=True)
-os.makedirs('C:/VirtualMachines/WindowsServers/WindowsServer2022', exist_ok=True)
-os.makedirs('C:/VirtualMachines/Windows10/10Professional', exist_ok=True)
-os.makedirs('C:/VirtualMachines/Windows11/11Professional', exist_ok=True)
-os.makedirs('C:/VirtualMachines/Linux/RHEL9', exist_ok=True)
-os.makedirs('C:/VirtualMachines/Linux/RHEL8', exist_ok=True)
-os.makedirs('C:/VirtualMachines/Linux/RHEL7', exist_ok=True)
-os.makedirs('C:/VirtualMachines/Linux/Ubuntu2110', exist_ok=True)
-os.makedirs('C:/VirtualMachines/Linux/Ubuntu2004', exist_ok=True)
-os.makedirs('C:/VirtualMachines/Linux/Ubuntu1804', exist_ok=True)
-os.makedirs('C:/VirtualMachines/Linux/Kali', exist_ok=True)
+# Define the list of directory paths
+os_list = [
+    'WindowsServers/WindowsServer2019',
+    'WindowsServers/WindowsServer2016',
+    'WindowsServers/WindowsServer2012',
+    'WindowsServers/WindowsServer2022',
+    'Windows10/10Professional',
+    'Windows11/11Professional',
+    'Linux/RHEL9',
+    'Linux/RHEL8',
+    'Linux/RHEL7',
+    'Linux/Ubuntu2110',
+    'Linux/Ubuntu2004',
+    'Linux/Ubuntu1804',
+    'Linux/Kali'
+]
 
-### Create Games Folder for Epic, Battle.NET, Steam
-os.makedirs('C:/Games/EpicGames', exist_ok=True)
-os.makedirs('C:/Games/BattleNET', exist_ok=True)
-os.makedirs('C:/Games/SteamLibrary', exist_ok=True)
+# Create the directories using a loop
+for os_path in os_list:
+    os.makedirs(f'C:/VirtualMachines/{os_path}', exist_ok=True)
 
-### Create OBS folder on O:\ 10 TB drive
-os.makedirs('O:/OBS', exist_ok=True)
+# Define the dictionary of directory paths and drive letters
+directories = {
+    'C:/VirtualMachines/WindowsServers/WindowsServer2019': 'C',
+    'C:/VirtualMachines/WindowsServers/WindowsServer2016': 'C',
+    'C:/VirtualMachines/WindowsServers/WindowsServer2012': 'C',
+    'C:/VirtualMachines/WindowsServers/WindowsServer2022': 'C',
+    'C:/VirtualMachines/Windows10/10Professional': 'C',
+    'C:/VirtualMachines/Windows11/11Professional': 'C',
+    'C:/VirtualMachines/Linux/RHEL9': 'C',
+    'C:/VirtualMachines/Linux/RHEL8': 'C',
+    'C:/VirtualMachines/Linux/RHEL7': 'C',
+    'C:/VirtualMachines/Linux/Ubuntu2110': 'C',
+    'C:/VirtualMachines/Linux/Ubuntu2004': 'C',
+    'C:/VirtualMachines/Linux/Ubuntu1804': 'C',
+    'C:/VirtualMachines/Linux/Kali': 'C',
+    'C:/Games/EpicGames': 'C',
+    'C:/Games/BattleNET': 'C',
+    'C:/Games/SteamLibrary': 'C',
+    'O:/OBS': 'O',
+    'O:/_Best OBS Videos': 'O',
+    'O:/_scratch': 'O',
+    'O:/Downloads': 'O',
+    'C:/ftp': 'C'
+}
 
-### Create _bestVideos on O:\
-os.makedirs('O:/_Best OBS Videos', exist_ok=True)
-
-### Create _scratch on O:\
-os.makedirs('O:/_Best OBS Videos', exist_ok=True)
-
-### Create downloads folder on O:\
-os.makedirs('O:/Downloads', exist_ok=True)
-
-### Create FTP folder on C: for FTP server
-os.makedirs('C:/ftp', exist_ok=True)
-
-### Remove C:\VirtualMachines - Uncomment the line below here and add the necessary line(s) to remove directories using shutil.rmtree
-#shutil.rmtree('C:/VirtualMachines')
-
+# Create the directories using a loop
+for path, drive in directories.items():
+    os.makedirs(path.replace(drive + ':/', drive + ':\\'), exist_ok=True)
