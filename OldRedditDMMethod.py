@@ -23,7 +23,7 @@ except Exception as e:
 # Add a 1-second delay before entering the username
 time.sleep(1)
 # Enter the username
-username_input.send_keys("pokequick")
+username_input.send_keys("")
 
 # Find the password input field
 password_input = driver.find_element(By.ID, "passwd_login")
@@ -31,7 +31,7 @@ password_input = driver.find_element(By.ID, "passwd_login")
 # Add a 1-second delay before entering the password
 time.sleep(1)
 # Enter the password
-password_input.send_keys("F@$tB@ll98")
+password_input.send_keys("")
 
 # Find the login button using XPath and click it
 try:
