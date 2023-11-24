@@ -23,16 +23,16 @@ try:
 except Exception as e:
     print("Error finding username input:", str(e))
 
-# Add a 1-second delay before entering the username
-time.sleep(1)
+# Add a 10-second delay before entering the username
+time.sleep(10)
 # Enter the username
 username_input.send_keys("")
 
 # Find the password input field
 password_input = driver.find_element(By.ID, "passwd_login")
 
-# Add a 1-second delay before entering the password
-time.sleep(1)
+# Add a 10-second delay before entering the password
+time.sleep(10)
 # Enter the password
 password_input.send_keys("")
 
@@ -58,7 +58,7 @@ except Exception as e:
     print("Error waiting for login:", str(e))
 
 # Add a 1-second delay before opening the compose message page
-time.sleep(1)
+time.sleep(10)
 
 # Now, open the compose message page
 driver.get("https://old.reddit.com/message/compose/")
@@ -81,8 +81,8 @@ for username in usernames:
 
     # Replace "" with the actual username you want to send the message to
     to_input.clear()
-    # Add a 1-second delay before entering the "to" field
-    time.sleep(1)
+    # Add a 10-second delay before entering the "to" field
+    time.sleep(10)
     to_input.send_keys(username)
 
     # Find the "subject" input element by its HTML element name using By.NAME
@@ -101,20 +101,20 @@ for username in usernames:
         EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/form[2]/div[7]/div/div/div[2]/div/div[1]/textarea'))
     )
 
-    # Add a 1-second delay before entering text in the textarea
-    time.sleep(1)
+    # Add a 10-second delay before entering text in the textarea
+    time.sleep(10)
 
     # Use JavaScript to set the value of the textarea to an empty string
     driver.execute_script("arguments[0].value = '';", text_area)
 
-    # Add a 1-second delay before entering text in the textarea
-    time.sleep(1)
+    # Add a 10-second delay before entering text in the textarea
+    time.sleep(10)
 
     # Enter text in the "text" textarea element using Selenium's send_keys method
     text_area.send_keys("Test Message")
 
-    # Add a 1-second delay before clicking the "send" button
-    time.sleep(1)
+    # Add a 10-second delay before clicking the "send" button
+    time.sleep(10)
 
     # Find the "send" button by its HTML element ID
     send_button = WebDriverWait(driver, 10).until(
@@ -128,8 +128,8 @@ for username in usernames:
     # Click the "send" button
     send_button.click()
 
-# Add a 1-second delay before closing the browser window
-time.sleep(1)
+# Add a 10-second delay before closing the browser window
+time.sleep(10)
 
 # Close the browser window
 driver.close()
