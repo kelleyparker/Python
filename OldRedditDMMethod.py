@@ -121,6 +121,10 @@ for username in usernames:
         EC.presence_of_element_located((By.ID, "send"))
     )
 
+    print(f"{username} added to past_usernames.txt")
+
+    past_usernames.add(username)
+    
     # Click the "send" button
     send_button.click()
 
