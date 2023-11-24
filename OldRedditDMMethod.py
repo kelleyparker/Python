@@ -5,6 +5,9 @@ from selenium.webdriver.support import expected_conditions as EC
 import datetime
 import time
 
+with open('past_usernames.txt', 'r') as past_usernames_file:
+    past_usernames = set(line.strip() for line in past_usernames_file)
+
 # Set up the web driver (you may need to install the Selenium library)
 driver = webdriver.Chrome()
 
@@ -67,6 +70,11 @@ with open("usernames.txt", "r") as file:
 # Loop through each username in the list
 for username in usernames:
     # Find the "to" input element by its HTML element name
+
+    if username in past_usernames:
+       print(f"Skipping message to {username}, as it has been sent before.")
+       continue
+    
     to_input = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.NAME, "to"))
     )
