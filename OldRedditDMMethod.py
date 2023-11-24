@@ -128,6 +128,9 @@ for username in usernames:
     # Click the "send" button
     send_button.click()
 
+with open('past_usernames.txt', 'a') as past_usernames_file:
+    past_usernames_file.write('\n'.join(past_usernames))
+
 # Add a 10-second delay before closing the browser window
 time.sleep(10)
 
